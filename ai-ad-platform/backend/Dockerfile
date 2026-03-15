@@ -21,5 +21,4 @@ RUN mkdir -p /tmp/ai-ad-assets
 
 EXPOSE 8000
 
-# Use shell form so $PORT env var is expanded at runtime
-CMD uvicorn main:app --host 0.0.0.0 --port ${PORT:-8000}
+CMD ["/bin/sh", "-c", "uvicorn main:app --host 0.0.0.0 --port ${PORT:-8000}"]
