@@ -13,6 +13,9 @@ class Settings(BaseSettings):
     # AI Services
     ANTHROPIC_API_KEY: str = ""
 
+    # Facebook Ad Library
+    FACEBOOK_ACCESS_TOKEN: str = ""  # Requires ads_read permission
+
     # Database
     DATABASE_URL: str = "postgresql://user:password@localhost:5432/ai_ad_platform"
 

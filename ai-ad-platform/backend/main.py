@@ -4,7 +4,7 @@ from fastapi.staticfiles import StaticFiles
 import os
 
 from app.core.config import settings
-from app.api.routes import brands, creatives, templates, campaigns, assets
+from app.api.routes import brands, creatives, templates, campaigns, assets, facebook_ads
 
 app = FastAPI(
     title="AI Ad Creative Platform",
@@ -29,6 +29,7 @@ app.include_router(creatives.router, prefix=settings.API_V1_STR)
 app.include_router(templates.router, prefix=settings.API_V1_STR)
 app.include_router(campaigns.router, prefix=settings.API_V1_STR)
 app.include_router(assets.router, prefix=settings.API_V1_STR)
+app.include_router(facebook_ads.router, prefix=settings.API_V1_STR)
 
 # Static files for uploaded assets
 assets_dir = "/tmp/ai-ad-assets"
@@ -56,6 +57,7 @@ def root():
             "Creative Performance Prediction",
             "Ad Export Engine",
             "Campaign Intelligence Engine",
+            "Facebook Ad Library Integration",
         ]
     }
 
